@@ -1,0 +1,22 @@
+<h2>Add Post</h2>
+ <a [routerLink]="['/post']">Post List</a>
+<form #frm="ngForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text"  [(ngModel)]="post.title" name="title" required  #title="ngModel"  class="form-control">
+    <div class="alert alert-danger" *ngIf="title.touched && !title.valid">Please Enter Valid Title</div>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" name="description" [(ngModel)]="post.description" #description="ngModel" required class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Blog Url</label>
+    <select class="form-control" name="BlogUrl" required id="BlogUrl" [(ngModel)]="post.blogId" #blogId="ngModel">
+      <option value="">Select</option>
+      <option *ngFor="let b of blogs" [value]="b.id">{{ b.url }}</option>
+    </select>
+  </div>
+  <input type="submit" class="btn btn-primary" id="submit" value="Submit" [disabled]="!frm.valid">
+  <input type="button" class="btn btn-danger" value="Delete" (click)="delete()" *ngIf="post.id" />
+</form>

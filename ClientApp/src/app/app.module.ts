@@ -12,6 +12,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { HttpModule } from '@angular/http';
+import { AddPostComponent } from './add-post/add-post.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpModule } from '@angular/http';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    PostListComponent
+    PostListComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,7 +33,9 @@ import { HttpModule } from '@angular/http';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      {path:'post',component:PostListComponent}
+      { path: 'post', component:PostListComponent },
+      { path: 'post/new', component:AddPostComponent },
+      { path: 'post/:id', component:AddPostComponent }
     ])
   ],
   providers: [

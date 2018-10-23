@@ -2,12 +2,15 @@
   Post List Updated again
 </h2>
 
+<a routerLink='/post/new'>Add Post</a>
+
 <table class="table">
   <thead>
     <tr>
     <th>Title</th>
     <th>Description</th>
     <th>Blog Url</th>
+    <th>Action</th>
   </tr>
   </thead>
   <tbody>
@@ -15,6 +18,9 @@
         <td>{{ p.title}}</td>
         <td>{{p.description}}</td>
         <td>{{p.blogUrl}}</td>
+        <td>
+          <a [routerLink]="['/post',p.id]">Edit</a>
+        </td>
     </tr>
   </tbody>
 </table>
