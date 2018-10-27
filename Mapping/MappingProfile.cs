@@ -13,6 +13,11 @@ namespace MyTestApp.Mapping
             CreateMap<PostResource,Post>();
             CreateMap<Blog,BlogResource>();
             CreateMap<BlogResource,Blog>();
+            CreateMap<Author,AuthorResourcs>();
+            CreateMap<AuthorResourcs,Author>();
+            CreateMap<Book,BookResource>()
+                .ForMember(dest=>dest.Author,map=>map.MapFrom(src=>src.Author.Name));
+            CreateMap<BookResource,Book>();
         }
     }
 }

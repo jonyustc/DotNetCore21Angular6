@@ -1,3 +1,4 @@
+import { BookService } from './services/book.service';
 import { PostService } from './services/post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { HttpModule } from '@angular/http';
 import { AddPostComponent } from './add-post/add-post.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AddPostComponent } from './add-post/add-post.component';
     CounterComponent,
     FetchDataComponent,
     PostListComponent,
-    AddPostComponent
+    AddPostComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,11 +38,13 @@ import { AddPostComponent } from './add-post/add-post.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'post', component:PostListComponent },
       { path: 'post/new', component:AddPostComponent },
-      { path: 'post/:id', component:AddPostComponent }
+      { path: 'post/:id', component:AddPostComponent },
+      { path: 'books', component:BookListComponent }
     ])
   ],
   providers: [
-    PostService
+    PostService,
+    BookService
   ],
   bootstrap: [AppComponent]
 })
