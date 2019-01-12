@@ -8,15 +8,15 @@ import { PostService } from '../services/post.service';
 })
 export class PostListComponent implements OnInit {
 
-  posts:any[];
+  posts: any[];
 
   constructor(
-    private postService:PostService
+    private postService: PostService
   ) { }
 
   ngOnInit() {
     this.postService.getPosts()
-    .subscribe(res=>this.posts=res);
+      .subscribe(res => this.posts = res);
   }
 
 }

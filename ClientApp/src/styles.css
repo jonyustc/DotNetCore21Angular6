@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+/* @import 'assets/styles/styles-vendor.css';
+@import 'assets/styles/vertical-tabs.css';
+@import 'assets/styles/themes.css'; */
+
+
+body{
+    font-size: 2em;
+}
